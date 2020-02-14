@@ -4,7 +4,7 @@
 #define INCLUDE_SECOND_HPP_
 
 #include <iostream>
-#define stack_size 10
+#define SIZE_OF_STACK 10
 
 template <typename T>
 class Stack
@@ -16,22 +16,22 @@ public:
     void push_emplace(Args&&... value)
     {
         T obj(value...);
-        stack_size[element_counter] = obj;
+        stack_contents[element_counter] = obj;
         element_counter--;
     }
     void push(T&& value)
     {
-        stack_size[element_counter] = value;
+        stack_contents[element_counter] = value;
         element_counter--;
     }
     T pop()
     {
         element_counter++;
-        return stack_size[element_counter];
+        return stack_contents[element_counter];
     }
     const T& head() const
     {
-        return stack_size[element_counter+1];
+        return stack_contents[element_counter+1];
     }
 };
 
