@@ -9,9 +9,9 @@
 template <typename T>
 class Stack
 {
-    int64_t element_counter = stack_size-1; 
+    int64_t element_counter = SIZE_OF_STACK-1;
 public:
-    T stack_contents[stack_size];
+    T stack_contents[SIZE_OF_STACK];
     template <typename ... Args>
     void push_emplace(Args&&... value)
     {
@@ -36,4 +36,4 @@ public:
 };
 
 
-#endif // INCLUDE_HEADER_HPP_
+#endif // INCLUDE_SECOND_HPP_
