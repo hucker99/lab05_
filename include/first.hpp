@@ -9,7 +9,7 @@
 template <typename T>
 class stack
 {
-    int64_t element_counter = stack_size-1;
+    int64_t element_counter = SIZE_OF_STACK-1;
 public:
     T stack_contents[SIZE_OF_STACK];
     void push(const T& value)
