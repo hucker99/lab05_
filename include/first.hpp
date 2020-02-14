@@ -9,20 +9,20 @@
 template <typename T>
 class stack
 {
-    int64_t element_counter=stack_size-1;
+    int64_t element_counter = stack_size-1;
     
 public:
     T stack_contents[stack_size];
     
     void push(const T& value)
     {
-        stack_size[element_counter]=value;
+        stack_size[element_counter] = value;
         element_counter--;
     }
     
     void push(T&& value)
     {
-        stack_size[element_counter]=value;
+        stack_size[element_counter] = value;
         element_counter--;
     }
     
