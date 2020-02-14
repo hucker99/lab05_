@@ -5,10 +5,10 @@
 #include "second.hpp"
 
 TEST(Example, EmptyTest) {
-    EXPECT_EQ(std::is_move_constructible<stack1<int>>::value, true);
-    EXPECT_EQ(std::is_move_assignable<stack1<int>>::value, true);
-    EXPECT_EQ(std::is_move_constructible<stack2<int>>::value, true);
-    EXPECT_EQ(std::is_move_assignable<stack2<int>>::value, true);
+    EXPECT_EQ(std::is_move_constructible<stack<int>>::value, true);
+    EXPECT_EQ(std::is_move_assignable<stack<int>>::value, true);
+    EXPECT_EQ(std::is_move_constructible<Stack<int>>::value, true);
+    EXPECT_EQ(std::is_move_assignable<Stac2<int>>::value, true);
     stack <int> number;
     int a = 12;
     number.push(a);
