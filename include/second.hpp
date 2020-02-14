@@ -1,20 +1,24 @@
-#ifndef INCLUDE_first_HPP_
-#define INCLUDE_first_HPP_
+// Copyright 2018 You Name <your_email>
+
+#ifndef INCLUDE_second_HPP_
+#define INCLUDE_second_HPP_
 
 #include <iostream>
 #define stack_size 10
 
 template <typename T>
-class stack
+class Stack
 {
     int64_t element_counter=stack_size-1;
     
 public:
     T stack_contents[stack_size];
     
-    void push(const T& value)
+    template <typename ... Args>
+    void push_emplace(Args&&... value)
     {
-        stack_size[element_counter]=value;
+        T obj(value...);
+        stack_size[element_counter] = obj;
         element_counter--;
     }
     
@@ -35,3 +39,5 @@ public:
         return stack_size[element_counter+1];
     }
 };
+
+#endif // INCLUDE_HEADER_HPP_
