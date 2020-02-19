@@ -11,7 +11,7 @@ class Stack
 {
     int64_t element_counter = SIZE_OF_STACK-1;
 public:
-    T stack_contents[SIZE_OF_STACK];
+     T *stack_contents = new T[SIZE_OF_STACK];
     template <typename ... Args>
     void push_emplace(Args&&... value)
     {
