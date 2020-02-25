@@ -17,7 +17,7 @@ public:
     some_double(f2), some_string(f3)  //инициализация переменных
     {
         std::cout << "Done: " << some_int << ", "
-    << some_double << ", " << some_string << std::endl;
+        << some_double << ", " << some_string << std::endl;
     }
 };
 
@@ -49,16 +49,21 @@ public:
     void push(T&& value) //по значению (int a=2, передается 2)
     {
         current_pos++;
-        if (current_pos>=SIZE_OF_STACK) stack_contents = (T *) realloc (stack_contents,current_pos+1);
+        if (current_pos>=SIZE_OF_STACK)
+        {
+            stack_contents = (T *) realloc (stack_contents,current_pos+1);
+        }
         stack_contents[element_counter] = value;
-        std::cout << "Element = " << stack_contents[element_counter] << std::endl;
+        std::cout << "Element = "
+        << stack_contents[element_counter] << std::endl;
         element_counter--;
     }
     
     T pop()
     {
         element_counter++;
-        std::cout << "Element = " << stack_contents[element_counter] << std::endl;
+        std::cout << "Element = "
+        << stack_contents[element_counter] << std::endl;
         return stack_contents[element_counter];
     }
     
