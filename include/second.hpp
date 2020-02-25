@@ -37,7 +37,8 @@ public:
         //T current_pos = head();
         if (current_pos >= SIZE_OF_STACK)
         {
-            stack_contents = (T *) realloc(stack_contents, current_pos+1);
+            stack_contents = reinterpret_cast<T*>(
+              realloc(stack_contents, current_pos+1));
         }
         T obj(value...);
         stack_contents[element_counter] = obj;
@@ -49,7 +50,8 @@ public:
         current_pos++;
         if (current_pos >= SIZE_OF_STACK)
         {
-            stack_contents = (T *) realloc(stack_contents, current_pos+1);
+            stack_contents = reinterpret_cast<T *>(
+              realloc(stack_contents, current_pos+1));
         }
         stack_contents[element_counter] = value;
         std::cout << "Element = "
