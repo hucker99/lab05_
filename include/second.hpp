@@ -16,7 +16,8 @@ public:
     myClass(int f1, double f2, std::string f3):some_int(f1),
     some_double(f2), some_string(f3)  //инициализация переменных
     {
-        std::cout << "Done: " << some_int << ", " << some_double << ", " << some_string << std::endl;
+        std::cout << "Done: " << some_int << ", " <<
+    << some_double << ", " << some_string << std::endl;
     }
 };
 
@@ -25,7 +26,7 @@ template <typename T>
 class Stack
 {
     int64_t element_counter = SIZE_OF_STACK-1;
-    int current_pos=0;
+    int current_pos = 0;
 public:
      T *stack_contents = new T[SIZE_OF_STACK];
     template <typename ... Args>
@@ -35,7 +36,10 @@ public:
     {
         current_pos++;
         //T current_pos = head();
-        if (current_pos>=SIZE_OF_STACK) stack_contents = (T *) realloc (stack_contents,current_pos+1);
+        if (current_pos >= SIZE_OF_STACK)
+        {
+            stack_contents = (T *) realloc (stack_contents,current_pos+1);
+        }
         T obj(value...);
         stack_contents[element_counter] = obj;
         element_counter--;
