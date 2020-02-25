@@ -13,7 +13,8 @@ class myClass
     std::string some_string;
 public:
     myClass(){}
-    myClass(int f1, double f2, std::string f3):some_int(f1), some_double(f2), some_string(f3)  //инициализация переменных
+    myClass(int f1, double f2, std::string f3):some_int(f1),
+    some_double(f2), some_string(f3)  //инициализация переменных
     {
         std::cout << "Done: " << some_int << ", " << some_double << ", " << some_string << std::endl;
     }
@@ -23,7 +24,7 @@ public:
 template <typename T>
 class Stack
 {
-    int64_t element_counter=SIZE_OF_STACK-1;
+    int64_t element_counter = SIZE_OF_STACK-1;
     int current_pos=0;
 public:
      T *stack_contents = new T[SIZE_OF_STACK];
