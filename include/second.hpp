@@ -15,10 +15,12 @@ public:
     template <typename ... Args>
     void push_emplace(Args&&... value)
     {
+        current_pos++;
+        if (current_pos>=SIZE_OF_STACK) stack_contents = (T *) realloc (stack_contents,current_pos+1);
         T obj(value...);
         stack_contents[element_counter] = obj;
         element_counter--;
-    }
+        push(std::forward<T>(T(value...)));
     void push(T&& value)
     {
         stack_contents[element_counter] = value;
