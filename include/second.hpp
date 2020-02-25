@@ -16,7 +16,7 @@ public:
     myClass(int f1, double f2, std::string f3):some_int(f1),
     some_double(f2), some_string(f3)  //инициализация переменных
     {
-        std::cout << "Done: " << some_int << ", " <<
+        std::cout << "Done: " << some_int << ", "
     << some_double << ", " << some_string << std::endl;
     }
 };
