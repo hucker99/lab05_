@@ -31,6 +31,9 @@ public:
     {
         return stack_contents[element_counter+1];
     }
+    ~stack(){
+        delete[] stack_contents;
+    }
 };
 
 
