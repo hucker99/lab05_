@@ -70,6 +70,7 @@ public:
         return stack_contents[element_counter+1];
     }
     ~Stack(){
+        delete[] stack_contents;
     }
 };
 #endif // INCLUDE_SECOND_HPP_
