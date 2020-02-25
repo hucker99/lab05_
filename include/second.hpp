@@ -30,8 +30,6 @@ class Stack
 public:
      T *stack_contents = new T[SIZE_OF_STACK];
     template <typename ... Args>
-    
-    
     void push_emplace(Args&&... value)
     {
         current_pos++;
@@ -45,7 +43,6 @@ public:
         element_counter--;
         push(std::forward<T>(T(value...)));
     }
-    
     void push(T&& value) //по значению (int a=2, передается 2)
     {
         current_pos++;
@@ -58,7 +55,6 @@ public:
         << stack_contents[element_counter] << std::endl;
         element_counter--;
     }
-    
     T pop()
     {
         element_counter++;
@@ -66,7 +62,6 @@ public:
         << stack_contents[element_counter] << std::endl;
         return stack_contents[element_counter];
     }
-    
     const T& head() const
     {
         return stack_contents[element_counter+1];
@@ -74,6 +69,4 @@ public:
     ~Stack(){
     }
 };
-
-
 #endif // INCLUDE_SECOND_HPP_
