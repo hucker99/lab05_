@@ -4,6 +4,7 @@
 #define INCLUDE_SECOND_HPP_
 
 #include <iostream>
+#include <string>
 #define SIZE_OF_STACK 10
 
 class myClass
@@ -36,7 +37,7 @@ public:
         //T current_pos = head();
         if (current_pos >= SIZE_OF_STACK)
         {
-            stack_contents = (T *) realloc (stack_contents,current_pos+1);
+            stack_contents = (T *) realloc(stack_contents, current_pos+1);
         }
         T obj(value...);
         stack_contents[element_counter] = obj;
@@ -46,9 +47,9 @@ public:
     void push(T&& value) //по значению (int a=2, передается 2)
     {
         current_pos++;
-        if (current_pos>=SIZE_OF_STACK)
+        if (current_pos >= SIZE_OF_STACK)
         {
-            stack_contents = (T *) realloc (stack_contents,current_pos+1);
+            stack_contents = (T *) realloc(stack_contents, current_pos+1);
         }
         stack_contents[element_counter] = value;
         std::cout << "Element = "
